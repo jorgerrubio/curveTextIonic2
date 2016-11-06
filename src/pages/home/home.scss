@@ -1,0 +1,43 @@
+page-home {
+    .box-lists{
+        margin: 0 16px;
+        padding: 0;
+        .box-list{
+            float: left;
+            margin: 30px 2px 0;
+            position: relative;
+            text-align: center;
+            width: 156px;
+            .title-list{
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                p{
+                    bottom: 0;
+                    color: #000000;
+                    display: inline-block;
+                    font-size: 12px;
+                    left: 0;
+                    margin: -20px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    text-transform: none;
+                    transform-origin:50% 50%;
+                    transition: all 1s ease;
+                }
+            }
+            .img-list{
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                height: 156px;
+                margin: auto;
+                width: 156px;
+            }
+        }
+    }
+}
