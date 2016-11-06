@@ -3,11 +3,13 @@
 install ionic and cordova [documentación](http://ionicframework.com/docs/v2/getting-started/installation/)
 
     $ npm install -g ionic cordova
+    $ ionic start curvetext blank --v2 --ts
+    $ cd curvetext
 
 ###Create Model List
     src/models/list.ts
 
-´´´javascript
+´´´
     export class List{
         title: string;
         image: string;
@@ -17,11 +19,11 @@ install ionic and cordova [documentación](http://ionicframework.com/docs/v2/get
     $ ionic g provider ListProvider
 
 add model List to provider
-´´´javascript
+´´´
     import {List} from "../models/list";
 ´´´
 Create data and method return data
-´´´javascript
+´´´
     lists: Array<List> = [
         {title: 'People', image: 'assets/img/people400x500.jpg'},
         {title: 'Business list', image: 'assets/img/business400x300.jpg'},
@@ -40,7 +42,7 @@ Create data and method return data
 
 add import
 
-´´´javascript
+´´´
     import { DomSanitizer} from '@angular/platform-browser';
     import {ListProvider} from "../../providers/list-provider";
     import {List} from "../../models/list";
@@ -48,7 +50,7 @@ add import
 
 
 add to class Home
-´´´javascript
+´´´
     lists: Array<List>;
     constructor(public navCtrl: NavController, public domSanitizer: DomSanitizer, public listProvider: ListProvider) {}
 
@@ -74,7 +76,7 @@ add to class Home
     }
 ´´´
 ### Edit home.html
-´´´html
+´´´
     <ion-content>
         <div class="box-lists">
             <div class="box-list" *ngFor="let list of lists">
@@ -85,7 +87,7 @@ add to class Home
     </ion-content>
 ´´´
 ### home.scss
-´´´css
+´´´
     page-home {
         .box-lists{
             margin: 0 16px;
