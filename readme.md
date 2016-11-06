@@ -35,6 +35,12 @@ Create data and method return data
         return this.lists;
     }
 
+###Add to app.module.ts the provider
+    src/app/app.module.ts
+
+    import {ListProvider} from "../providers/list-provider";
+
+    providers: [ListProvider]
 
 ###Edit home.ts
     src/pages/home.ts
@@ -59,17 +65,17 @@ add to class Home
 
     private curveText(lists: any, separation: number = 6): void{
         lists.forEach((list) => {
-        let htmlTitle: string;
-        let title = list.title.split('');
-        let origin = parseFloat('-' + ((separation * title.length) / 2));
+            let htmlTitle: string;
+            let title = list.title.split('');
+            let origin = parseFloat('-' + ((separation * title.length) / 2));
 
-        title.forEach((letter) => {
-            htmlTitle += `<p style='transform:rotate(${origin}deg);'>${(letter == ' ') ? '&nbsp;' : letter}</p>`;
-            origin += separation;
-        });
+            title.forEach((letter) => {
+                htmlTitle += `<p style='transform:rotate(${origin}deg);'>${(letter == ' ') ? '&nbsp;' : letter}</p>`;
+                origin += separation;
+            });
 
-        let parse = htmlTitle.split('undefined');
-        list.title = this.domSanitizer.bypassSecurityTrustHtml(parse[1]);
+            let parse = htmlTitle.split('undefined');
+            list.title = this.domSanitizer.bypassSecurityTrustHtml(parse[1]);
         });
     }
 
@@ -130,3 +136,5 @@ add to class Home
         }
     }
 
+### run serve
+    $ ionic serve
